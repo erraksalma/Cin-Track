@@ -17,7 +17,6 @@
                 <h1 class="text-2xl font-extrabold tracking-tight text-[#800020] sm:text-3xl">
                     Ciné<span class="text-white">Track</span>
                 </h1>
-                <p class="text-xs text-gray-400">Votre univers cinéma</p>
             </div>
         </nav>
     </header>
@@ -53,18 +52,35 @@
                 </select>
             </div>
         </section>
-        <section>
-            <div id="movies" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
+            <section class="lg:col-span-3">
+                <h2 class="mb-5 text-2xl font-bold text-[#B03050]">
+                    Catalogue
+                </h2>
 
-                
-            </div>
-        </section>
+                <div id="movies" class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                </div>
+            </section>
+            <aside class="rounded-xl border border-[#800020] bg-[#171717] p-5 lg:col-span-1">
+
+                <div class="mb-6 flex items-center justify-between border-b border-[#800020] pb-4">
+                    <h2 class="text-xl font-bold text-white">
+                        <span class="text-[#B03050]">♥</span> Mes favoris
+                    </h2>
+                </div>
+
+                <div id="favoritesList" class="flex flex-col gap-4">
+                </div>
+
+            </aside>
+
+        </div>
     </main>
     <footer class="border-t border-[#800020] bg-[#0D0D0D]">
         <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
             <p class="text-center text-sm font-semibold text-[#800020]">
-                &copy; 2026 CinéTrack. Tous droits réservés.
+                &copy; 2026 CinéTrack. Tous droits réserves.
             </p>
         </div>
     </footer>
