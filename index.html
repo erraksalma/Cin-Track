@@ -1,12 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CinéTrack</title>
-    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/output.css" />
 </head>
-<body>
-  
+
+<body class="bg-[#0D0D0D] text-white min-h-screen flex flex-col">
+    <header class="bg-[#0D0D0D] border-b border-[#800020]">
+        <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
+            <img src="./img/logo.jpg" alt="CinéTrack logo"
+                class="h-12 w-12 rounded-4xl object-contain sm:h-16 sm:w-16" />
+            <div>
+                <h1 class="text-2xl font-extrabold tracking-tight text-[#800020] sm:text-3xl">
+                    Ciné<span class="text-white">Track</span>
+                </h1>
+                <p class="text-xs text-gray-400">Votre univers cinéma</p>
+            </div>
+        </nav>
+    </header>
+    <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
+        <section class="mb-8 text-center">
+            <h2 class="mb-3 text-3xl font-extrabold text-white sm:text-4xl">
+                Découvrez votre prochain
+                <span class="text-[#800020]">coup de cœur</span>
+            </h2>
+
+            <p class="text-gray-400">
+                Explorez notre collection de films et de séries
+            </p>
+        </section>
+        <section
+            class="mb-8 flex flex-col gap-4 rounded-xl border border-[#800020] bg-[#171717] p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex flex-col gap-2 sm:w-2/3">
+                <label for="recherche" class="text-sm font-semibold text-[#B03050]">
+                    Rechercher :
+                </label>
+                <input id="recherche" type="text" placeholder="Rechercher un film..."
+                    class="w-full rounded-lg border border-[#800020] bg-[#2B1018] px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#800020]" />
+            </div>
+            <div class="flex flex-col gap-2 sm:w-1/3">
+                <label for="status" class="text-sm font-semibold text-[#B03050]">
+                    Catégorie :
+                </label>
+                <select id="status"
+                    class="w-full rounded-lg border border-[#800020] bg-[#2B1018] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#800020]">
+                    <option value="all">Tous</option>
+                    <option value="movie">Films</option>
+                    <option value="series">Séries</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div id="movies" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+
+                
+            </div>
+        </section>
+    </main>
+    <footer class="border-t border-[#800020] bg-[#0D0D0D]">
+        <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold text-[#800020]">
+                &copy; 2026 CinéTrack. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
+
 </html>
