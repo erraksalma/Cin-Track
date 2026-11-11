@@ -4,6 +4,7 @@ const moviesG = document.querySelector("#movies");
 const modal=document.querySelector("#modal");
 const modalContent=document.querySelector("#modalContent");
 const closeModal=document.querySelector("#closeModal");
+const recherche=document.querySelector("#recherche");
 let movies=[];
 async function init() {
     try{
@@ -36,4 +37,22 @@ moviesG.addEventListener("click", (e) => {
 closeModal.addEventListener("click", ()=>{
     modal.classList.add("hidden");
     modal.classList.remove("flex");
+});
+function rechercherFilms(){
+    const texte= recherche.value.toLowerCase().trim();
+const search=movies.filter(film=>{
+    return film.title.toLowerCase().includes(texte);
+});
+if(search.length===0){
+    moviesG.innerHTML=`
+    <p class="text-gray-400 text-center">Aucun film ou serie trouve</p>
+    `; 
+}else{
+    moviesG.innerHTML=search.map(film=>{
+        return creerCarte(film);
+    }).join("");
+}
+}
+recherche.addEventListener("input",()=>{
+    rechercherFilms();
 });
