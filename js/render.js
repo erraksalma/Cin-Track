@@ -6,11 +6,11 @@ export function creerCarte(film) {
     couleur = "bg-[#800020] text-white";
   } else {
     statut = "Série";
-    couleur = "bg-[#800020]  text-white";
+    couleur = "bg-black  text-white";
   }
   return ` 
     <article data-id="${film.id}"
-            class=" relative rounded-lg bg-[#171717] border border-[#800020] p-4 flex flex-col gap-3 hover:scale-90 transition">
+            class=" relative rounded-lg bg-[#171717]  p-4 flex flex-col gap-3 hover:scale-90 transition">
 
             <img
                 src="${film.image}"
@@ -36,4 +36,32 @@ export function creerCarte(film) {
 
         </article>
  `;
+}
+export function creerModal(film) {
+   let statut = "";
+    if (film.type == "movie") {
+        statut = "Film";
+    } else {
+        statut = "Série";
+    }
+    let dure = "";
+    if (film.type == "movie") {
+        dure = `<p class="text-gray-300">Durée : ${film.duration} minutes</p>`;
+    } else {
+        dure = `<p class="text-gray-300">Saisons : ${film.seasons.length}</p>`;
+    }
+  return`
+
+  <div class="flex flex-col gap-4">
+  <img src="${film.image}" alt="${film.title}" class=" h-64 object-cover rounded-b-lg">
+  <h2 class="text-2xl font-bold text-white">${film.title}</h2>
+  <p class="text-white">Type : ${statut}</p>
+  <p>Annes : ${film.releaseYear}</p>
+  ${dure}
+  <p>Genres : ${film.genres.join(", ")}</p>
+  <p> Realisateurs : ${film.directors.join(",")}</p>
+   <p>Pays de production : ${film.productionCountries.join(", ")}</p>
+   <p class="text-gray-300">Description :${film.description}</p>
+  </div>
+  `;
 }
