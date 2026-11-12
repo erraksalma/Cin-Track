@@ -5,10 +5,12 @@ const modal=document.querySelector("#modal");
 const modalContent=document.querySelector("#modalContent");
 const closeModal=document.querySelector("#closeModal");
 const recherche=document.querySelector("#recherche");
+const status = document.querySelector("#status");
 let movies=[];
 async function init() {
     try{
      movies= await getMovies();
+     filterFilms();
     console.log(movies);
 
     moviesG.innerHTML=movies.map(film=>{
@@ -55,4 +57,21 @@ if(search.length===0){
 }
 recherche.addEventListener("input",()=>{
     rechercherFilms();
+});
+
+
+function filterFilms(){
+    const categorie = status.value;
+    const resultats=movies.filter(film=>{
+        if(categorie==="all"){
+            return true;
+        }
+        return film.type===categorie;
+    });
+    moviesG.innerHTML=resultats.map(film=>{
+        return creerCarte(film);
+    }).join("");
+}
+status.addEventListener("change",()=>{
+    filterFilms();
 });
