@@ -1,4 +1,4 @@
-export function creerCarte(film) {
+export function creerCarte(film, estfavori = false) {
   let statut = "";
   let couleur = "";
   if (film.type == "movie") {
@@ -11,12 +11,10 @@ export function creerCarte(film) {
   return ` 
     <article data-id="${film.id}"
             class=" relative rounded-lg bg-[#171717]  p-4 flex flex-col gap-3 hover:scale-90 transition">
-
             <img
                 src="${film.image}"
                 alt="${film.title}"
-                class="w-full h-64 object-cover rounded-lg"
-            >
+                class="w-full h-64 object-cover rounded-lg">
             <h2 class="text-xl font-bold text-white">
                 ${film.title}
             </h2>
@@ -29,11 +27,9 @@ export function creerCarte(film) {
             <button
     data-favorite="${film.id}"
     class="absolute right-6 top-6 z-10 rounded-full bg-black p-2 text-2xl text-[#B03050] hover:text-red-500 transition"
-    aria-label="Ajouter aux favoris"
->
-    ♥
+    aria-label="Ajouter aux favoris">
+    ${estfavori ? "❤️" : "❤️"}
 </button>
-
         </article>
  `;
 }
@@ -51,8 +47,7 @@ export function creerModal(film) {
         dure = `<p class="text-gray-300">Saisons : ${film.seasons.length}</p>`;
     }
   return`
-
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4  font-bold">
   <img src="${film.image}" alt="${film.title}" class=" h-64 object-cover rounded-b-lg">
   <h2 class="text-2xl font-bold text-white">${film.title}</h2>
   <p class="text-white">Type : ${statut}</p>
