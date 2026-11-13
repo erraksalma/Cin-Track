@@ -9,6 +9,6 @@ export async function getMovies() {
         return data;
     } catch(error){
         console.log("Erreur",error);
-        return[];
+     throw error; 
     }
 }
